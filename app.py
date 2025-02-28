@@ -71,27 +71,9 @@ def main():
                     df = pd.DataFrame(distributors)
                     st.dataframe(df)
                     
-                    # Step 4: Save to CSV
-                    save_to_csv(distributors)
+                    # # Step 4: Save to CSV
+                    # save_to_csv(distributors)
                     
-                    # Find the CSV file that was created
-                    # Note: This assumes save_to_csv saves to the current directory
-                    # You may need to adjust this if your save_to_csv function uses a different path
-                    csv_files = [f for f in os.listdir('.') if f.endswith('.csv')]
-                    latest_csv = max(csv_files, key=os.path.getctime) if csv_files else None
-                    
-                    if latest_csv:
-                        # Read the saved file to provide download capability
-                        with open(latest_csv, 'rb') as f:
-                            csv_data = f.read()
-                        
-                        # Provide download link
-                        st.download_button(
-                            label="Download CSV",
-                            data=csv_data,
-                            file_name=latest_csv,
-                            mime='text/csv'
-                        )
                 else:
                     st.warning("No data was scraped from the websites.")
             
