@@ -1,6 +1,7 @@
 import pandas as pd
 
-def save_to_csv(data, output_file='output.csv'):
+def save_to_csv(data,
+                output_file='output.csv'):
     """
     Save data to a CSV file
     

@@ -1,8 +1,9 @@
 import os
 from typing import List
 from openai import OpenAI
-from pydantic import BaseModel, Field
 from dotenv import load_dotenv
+from pydantic import (BaseModel,
+                      Field)
 load_dotenv(override=True)
 
 class WebsiteInfo(BaseModel):
